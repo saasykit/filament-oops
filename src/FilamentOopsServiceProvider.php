@@ -13,11 +13,11 @@ use Filament\View\PanelsRenderHook;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\View\View;
 use Livewire\Features\SupportTesting\Testable;
+use Saasykit\FilamentOops\Commands\FilamentOopsCommand;
+use Saasykit\FilamentOops\Testing\TestsFilamentOops;
 use Spatie\LaravelPackageTools\Commands\InstallCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Saasykit\FilamentOops\Commands\FilamentOopsCommand;
-use Saasykit\FilamentOops\Testing\TestsFilamentOops;
 
 class FilamentOopsServiceProvider extends PackageServiceProvider
 {
