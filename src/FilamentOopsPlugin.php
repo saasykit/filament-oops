@@ -1,15 +1,22 @@
 <?php
 
-namespace VendorName\Skeleton;
+namespace Saasykit\FilamentOops;
 
 use Filament\Contracts\Plugin;
 use Filament\Panel;
 
-class SkeletonPlugin implements Plugin
+class FilamentOopsPlugin implements Plugin
 {
+    protected array $config = [
+        'production' => [
+            'color' => 'red',
+            'label' => 'Production',
+        ],
+    ];
+
     public function getId(): string
     {
-        return 'skeleton';
+        return 'filament-oops';
     }
 
     public function register(Panel $panel): void
@@ -33,5 +40,17 @@ class SkeletonPlugin implements Plugin
         $plugin = filament(app(static::class)->getId());
 
         return $plugin;
+    }
+
+    public function setConfig(array $config): FilamentOopsPlugin
+    {
+        $this->config = $config;
+
+        return $this;
+    }
+
+    public function getConfig(): array
+    {
+        return $this->config;
     }
 }

@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Saasykit\FilamentOops\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class FilamentOopsCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'filament-oops';
 
     public $description = 'My command';
 
