@@ -96,7 +96,6 @@ class FilamentOopsServiceProvider extends PackageServiceProvider
     protected function getAssets(): array
     {
         return [
-            // AlpineComponent::make('filament-oops', __DIR__ . '/../resources/dist/components/filament-oops.js'),
             Css::make('filament-oops-styles', __DIR__ . '/../resources/dist/filament-oops.css'),
         ];
     }
