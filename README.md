@@ -1,8 +1,8 @@
 # Never accidentally edit your Filament production panel again!
 
-Filament Oops displays a clear 'Production' warning on your production Filament panel, helping you avoid costly mistakes and keeping your development safe.
-
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/saasykit/filament-oops.svg?style=flat-square)](https://packagist.org/packages/saasykit/filament-oops)
+
+Filament Oops displays a clear 'Production' warning on your production Filament panel, helping you avoid costly mistakes and keeping your development safe.
 
 Filament Oops uses the `APP_ENV` environment variable to determine the environment your Filament panel is running in. If you're running your Filament panel in production, Filament Oops will display a clear 'Production' warning on your panel.
 
