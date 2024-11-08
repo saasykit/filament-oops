@@ -2,16 +2,12 @@
 
 namespace Saasykit\FilamentOops;
 
-use Filament\Support\Assets\AlpineComponent;
 use Filament\Support\Assets\Asset;
 use Filament\Support\Assets\Css;
 use Filament\Support\Assets\Js;
 use Filament\Support\Facades\FilamentAsset;
 use Filament\Support\Facades\FilamentIcon;
-use Filament\Support\Facades\FilamentView;
-use Filament\View\PanelsRenderHook;
 use Illuminate\Filesystem\Filesystem;
-use Illuminate\View\View;
 use Livewire\Features\SupportTesting\Testable;
 use Saasykit\FilamentOops\Commands\FilamentOopsCommand;
 use Saasykit\FilamentOops\Testing\TestsFilamentOops;
@@ -36,9 +32,6 @@ class FilamentOopsServiceProvider extends PackageServiceProvider
             ->hasCommands($this->getCommands())
             ->hasInstallCommand(function (InstallCommand $command) {
                 $command
-                    ->publishConfigFile()
-                    ->publishMigrations()
-                    ->askToRunMigrations()
                     ->askToStarRepoOnGitHub('saasykit/filament-oops');
             });
 
@@ -90,11 +83,6 @@ class FilamentOopsServiceProvider extends PackageServiceProvider
 
         // Testing
         Testable::mixin(new TestsFilamentOops);
-
-        FilamentView::registerRenderHook(
-            PanelsRenderHook::BODY_END,
-            fn (): View => view('filament-oops::main'),
-        );
     }
 
     protected function getAssetPackageName(): ?string

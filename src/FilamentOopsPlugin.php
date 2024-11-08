@@ -4,6 +4,9 @@ namespace Saasykit\FilamentOops;
 
 use Filament\Contracts\Plugin;
 use Filament\Panel;
+use Filament\Support\Facades\FilamentView;
+use Filament\View\PanelsRenderHook;
+use Illuminate\View\View;
 
 class FilamentOopsPlugin implements Plugin
 {
@@ -26,7 +29,14 @@ class FilamentOopsPlugin implements Plugin
 
     public function boot(Panel $panel): void
     {
-        //
+        if (isset($panel->getPlugins()[$this->getId()])) {
+            FilamentView::registerRenderHook(
+                PanelsRenderHook::BODY_END,
+                fn (): View => view('filament-oops::main', [
+                    'config' => $this->config,
+                ]),
+            );
+        }
     }
 
     public static function make(): static
@@ -42,9 +52,12 @@ class FilamentOopsPlugin implements Plugin
         return $plugin;
     }
 
-    public function setConfig(array $config): FilamentOopsPlugin
+    public function config(string $envName, string $label, string $color): FilamentOopsPlugin
     {
-        $this->config = $config;
+        $this->config[$envName] = [
+            'color' => $color,
+            'label' => $label,
+        ];
 
         return $this;
     }

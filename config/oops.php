@@ -2,5 +2,4 @@
 
 // config for Saasykit/FilamentOops
 return [
-
 ];
