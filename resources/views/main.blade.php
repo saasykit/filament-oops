@@ -1,6 +1,5 @@
-<span id="filament-oops-sign" style="background: {{ $config[config('app.env')]['color'] }}"></span>
-
 @if(isset($config[config('app.env')]))
+    <span id="filament-oops-sign" style="background: {{ $config[config('app.env')]['color'] }}"></span>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const logo = document.querySelector('.fi-logo');
