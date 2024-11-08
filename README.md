@@ -10,7 +10,7 @@ Filament Oops displays a clear 'Production' warning on your production Filament 
 
 Filament Oops uses the `APP_ENV` environment variable to determine the environment your Filament panel is running in. If you're running your Filament panel in production, Filament Oops will display a clear 'Production' warning on your panel.
 
-
+You can also define custom environment names and colors if you want to customize the warning message for your specific environments.
 
 ## Installation
 
@@ -27,6 +27,38 @@ php artisan vendor:publish --tag="filament-oops-views"
 ```
 
 ## Usage
+
+All you need to do is add the `FilamentOopsPlugin` to your `Filament` plugin list in your `FilamentServiceProvider` (usually located in `app/Providers/Filament/AdminPanelProvider.php`):
+
+```php
+class AdminPanelProvider extends PanelProvider
+{
+    public function panel(Panel $panel): Panel
+    {
+        return $panel
+            // some other configurations
+            ->plugins([
+                FilamentOopsPlugin::make(),  // Add this line
+            ]);
+    }
+}
+```
+
+### Customization
+
+```php
+class AdminPanelProvider extends PanelProvider
+{
+    public function panel(Panel $panel): Panel
+    {
+        return $panel
+            // some other configurations
+            ->plugins([
+                FilamentOopsPlugin::make(),  // Add this line
+            ]);
+    }
+}
+```
 
 ```php
 $filamentOops = new Saasykit\FilamentOops();

@@ -10,7 +10,7 @@ use Illuminate\View\View;
 
 class FilamentOopsPlugin implements Plugin
 {
-    protected array $config = [
+    protected array $envs = [
         'production' => [
             'color' => 'red',
             'label' => 'Production',
@@ -33,7 +33,7 @@ class FilamentOopsPlugin implements Plugin
             FilamentView::registerRenderHook(
                 PanelsRenderHook::BODY_END,
                 fn (): View => view('filament-oops::main', [
-                    'config' => $this->config,
+                    'config' => $this->envs,
                 ]),
             );
         }
@@ -52,9 +52,9 @@ class FilamentOopsPlugin implements Plugin
         return $plugin;
     }
 
-    public function config(string $envName, string $label, string $color): FilamentOopsPlugin
+    public function addEnvironment(string $envName, string $label, string $color): FilamentOopsPlugin
     {
-        $this->config[$envName] = [
+        $this->envs[$envName] = [
             'color' => $color,
             'label' => $label,
         ];
@@ -62,8 +62,8 @@ class FilamentOopsPlugin implements Plugin
         return $this;
     }
 
-    public function getConfig(): array
+    public function getEnvironments(): array
     {
-        return $this->config;
+        return $this->envs;
     }
 }
