@@ -7,8 +7,9 @@ Filament Oops displays a clear 'Production' warning on your production Filament 
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/saasykit/filament-oops/fix-php-code-styling.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/saasykit/filament-oops/actions?query=workflow%3A"Fix+PHP+code+styling"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/saasykit/filament-oops.svg?style=flat-square)](https://packagist.org/packages/saasykit/filament-oops)
 
-
 Filament Oops uses the `APP_ENV` environment variable to determine the environment your Filament panel is running in. If you're running your Filament panel in production, Filament Oops will display a clear 'Production' warning on your panel.
+
+<p align="center"><img style="height: 300px"  src="./docs/img/warning.png" alt="Warning"></p>
 
 You can also define custom environment names and colors if you want to customize the warning message for your specific environments.
 
@@ -46,6 +47,8 @@ class AdminPanelProvider extends PanelProvider
 
 ### Customization
 
+You can customize the environment names and colors by using the `addEnvironment` method on the `FilamentOopsPlugin`:
+
 ```php
 class AdminPanelProvider extends PanelProvider
 {
@@ -54,15 +57,10 @@ class AdminPanelProvider extends PanelProvider
         return $panel
             // some other configurations
             ->plugins([
-                FilamentOopsPlugin::make(),  // Add this line
+                FilamentOopsPlugin::make()->addEnvironment('local', 'Local', '#008000'),  // Add this line
             ]);
     }
 }
-```
-
-```php
-$filamentOops = new Saasykit\FilamentOops();
-echo $filamentOops->echoPhrase('Hello, Saasykit!');
 ```
 
 ## Contributing
@@ -75,7 +73,7 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
-- [SaaSykit](https://github.com/aswilam)
+- [SaaSykit](https://github.com/saasykit)
 - [All Contributors](../../contributors)
 
 ## License
