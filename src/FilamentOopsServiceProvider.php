@@ -98,7 +98,6 @@ class FilamentOopsServiceProvider extends PackageServiceProvider
         return [
             // AlpineComponent::make('filament-oops', __DIR__ . '/../resources/dist/components/filament-oops.js'),
             Css::make('filament-oops-styles', __DIR__ . '/../resources/dist/filament-oops.css'),
-            Js::make('filament-oops-scripts', __DIR__ . '/../resources/dist/filament-oops.js'),
         ];
     }
 
