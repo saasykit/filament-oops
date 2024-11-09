@@ -60,6 +60,11 @@ class AdminPanelProvider extends PanelProvider
 }
 ```
 
+## Psst: Wanna build a Laravel SaaS application quickly?
+If you want to build a SaaS app quickly, support us by checking out [SaaSykit](https://saasykit.com?ref=filament-oops). [SaaSykit](https://saasykit.com?ref=filament-oops) is a SaaS starter kit (boilerplate) that comes packed with all components required to run a modern SaaS software. Available in both multi-tenant and single-tenant versions.
+
+<p align="center"><a href="https://saasykit.com?ref=filament-oops"><img style="height: 60px"  src="https://saasykit.com/images/logo-dark.png" alt="SaaSykit"></a></p>
+
 ## Contributing
 
 Please see [CONTRIBUTING](.github/CONTRIBUTING.md) for details.
