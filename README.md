@@ -6,7 +6,7 @@ Filament Oops displays a clear 'Production' warning on your production Filament 
 
 Filament Oops uses the `APP_ENV` environment variable to determine the environment your Filament panel is running in. If you're running your Filament panel in production, Filament Oops will display a clear 'Production' warning on your panel.
 
-<p align="center"><img style="height: 300px"  src="./docs/img/warning.png" alt="Warning"></p>
+<p align="center"><img style="height: 300px"  src="https://github.com/saasykit/filament-oops/blob/7d8592b32673f5206b4c4ad0907b7abc7a913359/docs/img/warning.png" alt="Warning"></p>
 
 You can also define custom environment names and colors if you want to customize the warning message for your specific environments.
 
