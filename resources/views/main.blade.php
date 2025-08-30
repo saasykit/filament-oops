@@ -1,5 +1,4 @@
 @if(isset($config[config('app.env')]))
-
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const logo = document.querySelector('.fi-logo');
